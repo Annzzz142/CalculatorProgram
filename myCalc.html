@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>My Calculator</title>
+
+   <style>
+      body{
+         background-color: lightslategrey;
+      }
+      h1{
+         text-align: center;
+         color: black;
+         font-family: Georgia, 'Times New Roman', Times, serif;
+         text-decoration: underline;
+      }
+
+      table{
+         background-color:lightgrey;
+         border: thick black 5px;
+      }
+
+      input[type="button"] 
+      { 
+      background-color:darkgrey; 
+      color: black; 
+      border: solid black 2px; 
+      width:100% 
+      } 
+
+      input[type="text"] 
+      { 
+      background-color:white; 
+      border: solid black 2px; 
+      width:100% 
+      } 
+   </style> 
+
+</head>
+   <body> 
+      <div class="container">
+         <h1><br><br>SIMPLE CALCULATOR PROGRAM<br><br></h1>
+         <div class="row">
+
+            <div class="col col-12 col-md-4">
+               <tr>
+                  <td></td>
+                  <td></td>
+               </tr>
+            </div>
+
+            <div class="col col-12 col-md-4">
+               <form>
+                  <table class="table" border="2"> 
+                     <tr> 
+                        <td colspan="3"><input type="text" id="result"/></td> 
+                     
+                        <td><input type="button" value="c" onclick="clrScr()"/> </td> 
+                     </tr> 
+                     <tr> 
+                        <td><input type="button" value="7" onclick="displayValue('7')"/> </td> 
+                        <td><input type="button" value="8" onclick="displayValue('8')"/> </td> 
+                        <td><input type="button" value="9" onclick="displayValue('9')"/> </td> 
+                        <td><input type="button" value="/" onclick="displayValue('/')"/> </td> 
+                     </tr> 
+                     <tr> 
+                        <td><input type="button" value="4" onclick="displayValue('4')"/> </td> 
+                        <td><input type="button" value="5" onclick="displayValue('5')"/> </td> 
+                        <td><input type="button" value="6" onclick="displayValue('6')"/> </td> 
+                        <td><input type="button" value="-" onclick="displayValue('-')"/> </td> 
+                     </tr> 
+                     <tr> 
+                        <td><input type="button" value="1" onclick="displayValue('1')"/> </td> 
+                        <td><input type="button" value="2" onclick="displayValue('2')"/> </td> 
+                        <td><input type="button" value="3" onclick="displayValue('3')"/> </td> 
+                        <td><input type="button" value="+" onclick="displayValue('+')"/> </td> 
+                     </tr> 
+                     <tr> 
+                        <td><input type="button" value="0" onclick="displayValue('0')"/> </td> 
+                        <td><input type="button" value="." onclick="displayValue('.')"/> </td> 
+
+                        <td><input type="button" value="=" onclick="calculate()"/> </td> 
+                        <td><input type="button" value="*" onclick="displayValue('*')"/> </td> 
+                     </tr> 
+                  </table> 
+               </form>
+            </div>
+
+            <div class="col col-12 col-md-4">
+               <tr>
+                  <td></td>
+                  <td></td>
+               </tr>
+            </div>
+
+         </div>
+      </div>
+      
+
+      <script> 
+         function displayValue(val) 
+         { 
+             document.getElementById("result").value+=val;
+         } 
+           
+         function calculate() 
+         { 
+             var x = document.getElementById("result").value;
+             var y = eval(x);
+             document.getElementById("result").value = y;
+         } 
+
+         function clrScr() 
+         { 
+             document.getElementById("result").value = "";
+         } 
+      </script> 
+
+   </body> 
+</html>  
